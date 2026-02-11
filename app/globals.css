@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f3f4f6;
+  --foreground: #0f172a;
+  --brand-primary: #1e3a8a;
+  --brand-secondary: #60a5fa;
+  --brand-neutral: #f3f4f6;
+  --brand-accent: #ffffff;
+  --font-body: "Plus Jakarta Sans";
+  --font-heading: "Sora";
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--foreground);
+  font-family: var(--font-body), "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background:
+    radial-gradient(circle at 12% 12%, rgb(96 165 250 / 0.17), transparent 32%),
+    radial-gradient(circle at 85% 3%, rgb(30 58 138 / 0.09), transparent 36%),
+    var(--brand-neutral);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading), "Trebuchet MS", sans-serif;
+}
+
+a,
+button {
+  transition: all 220ms ease;
+}
+
+.nf-mesh-bg {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.nf-glow {
+  box-shadow: 0 22px 40px rgb(30 58 138 / 0.12);
+}
+
+.nf-card {
+  border: 1px solid rgb(148 163 184 / 0.22);
+  background: var(--brand-accent);
+  box-shadow: 0 10px 24px rgb(15 23 42 / 0.06);
+}
+
+.nf-card-hover {
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.nf-card-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgb(96 165 250 / 0.65);
+  box-shadow: 0 18px 30px rgb(30 58 138 / 0.15);
+}
+
+.nf-gradient-primary {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 52%, #60a5fa 100%);
+}
+
+.nf-badge {
+  border: 1px solid rgb(96 165 250 / 0.45);
+  background: rgb(239 246 255 / 0.85);
+  color: var(--brand-primary);
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 550ms ease both;
+}
+
+.animate-float {
+  animation: float-y 3.5s ease-in-out infinite;
+}
